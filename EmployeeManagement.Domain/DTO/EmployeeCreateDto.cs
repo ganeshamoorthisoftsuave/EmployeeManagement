@@ -1,5 +1,4 @@
-﻿using EmployeeManagement.Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -18,6 +17,6 @@ namespace EmployeeManagement.Domain.DTO
         public double Salary { get; set; }
 
         [Required]
-        public Department Department { get; set; } = new();
+        public int DepartmentId { get; set; }
     }
 }

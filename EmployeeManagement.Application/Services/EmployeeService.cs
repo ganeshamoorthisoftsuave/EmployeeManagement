@@ -11,9 +11,9 @@ namespace EmployeeManagement.Core.Services
     {
         private readonly ILogger<EmployeeService> _logger;
 
-        public EmployeeService(ILogger<EmployeeService> logger)
+        public EmployeeService(ILogger<EmployeeService>? logger = null)
         {
-            _logger = logger;
+            _logger = logger ?? Microsoft.Extensions.Logging.Abstractions.NullLogger<EmployeeService>.Instance;
         }
         private List<Employee> employees = new List<Employee>();
 

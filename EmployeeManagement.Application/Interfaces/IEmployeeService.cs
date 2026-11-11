@@ -32,6 +32,6 @@ namespace EmployeeManagement.Core.Interfaces
         double GetTotalSalary();
 
         List<Employee> SearchByName(string name);
-        IEnumerable<object> GetAllEmployees();
+        List<Employee> GetAllEmployees();
     }
 }

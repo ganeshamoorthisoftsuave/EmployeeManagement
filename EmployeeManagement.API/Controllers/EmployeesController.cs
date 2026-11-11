@@ -23,7 +23,7 @@ public class EmployeesController : ControllerBase
             Name = dto.Name,
             Age = dto.Age,
             Salary = dto.Salary,
-            Department = dto.Department
+            DepartmentId = dto.DepartmentId
         };
         _service.AddEmployee(employee);
 
@@ -36,11 +36,10 @@ public class EmployeesController : ControllerBase
         var employees = _service.GetAllEmployees();
         var result = employees.Select(e => new EmployeeResponseDto
         {
-            Id = e.Id,
             Name = e.Name,
             Age = e.Age,
             Salary = e.Salary,
-            Department = e.Department
+            DepartmentId = e.DepartmentId
         }).ToList();
         return Ok(result);
     }
