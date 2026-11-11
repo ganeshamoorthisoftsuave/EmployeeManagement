@@ -1,0 +1,81 @@
+- generic [ref=e3]:
+  - link "Skip to operations" [ref=e4] [cursor=pointer]:
+    - /url: "#operations"
+  - banner [ref=e5]:
+    - generic [ref=e7]:
+      - img [ref=e9]
+      - generic [ref=e45]:
+        - generic [ref=e46]: Select a definition
+        - combobox "Select a definition" [ref=e47]:
+          - option "EmployeeManagement.API v1" [selected]
+      - button "Switch to dark mode" [ref=e49] [cursor=pointer]:
+        - img [ref=e50]
+  - generic [ref=e52]:
+    - generic:
+      - img
+    - generic [ref=e53]:
+      - generic [ref=e58]:
+        - heading "EmployeeManagement.API 1.0 OAS 3.0" [level=1] [ref=e59]:
+          - text: EmployeeManagement.API
+          - generic [ref=e60]:
+            - generic [ref=e62]: "1.0"
+            - generic [ref=e64]: OAS 3.0
+        - link "http://localhost:5158/swagger/v1/swagger.json" [ref=e65] [cursor=pointer]:
+          - /url: http://localhost:5158/swagger/v1/swagger.json
+          - generic [ref=e66]: http://localhost:5158/swagger/v1/swagger.json
+      - main [ref=e67]:
+        - generic [ref=e72]:
+          - heading "Employees Collapse operation" [level=3] [ref=e73] [cursor=pointer]:
+            - generic [ref=e74]: Employees
+            - button "Collapse operation" [expanded] [ref=e75]:
+              - img [ref=e76]
+          - generic [ref=e79]:
+            - generic [ref=e82] [cursor=pointer]:
+              - button "POST /api/Employees" [ref=e83]:
+                - generic [ref=e84]: POST
+                - generic [ref=e88]:
+                  - text: /api
+                  - text: /Employees
+              - generic "Copy path to clipboard":
+                - button "Copy path to clipboard"
+              - button "post /api/Employees" [ref=e89]:
+                - img [ref=e90]
+            - generic [ref=e94] [cursor=pointer]:
+              - button "GET /api/Employees" [ref=e95]:
+                - generic [ref=e96]: GET
+                - generic [ref=e100]:
+                  - text: /api
+                  - text: /Employees
+              - generic "Copy path to clipboard":
+                - button "Copy path to clipboard"
+              - button "get /api/Employees" [ref=e101]:
+                - img [ref=e102]
+            - generic [ref=e106] [cursor=pointer]:
+              - 'button "GET /api/Employees/{id}" [ref=e107]':
+                - generic [ref=e108]: GET
+                - generic [ref=e112]:
+                  - text: /api
+                  - text: /Employees
+                  - text: "/{id}"
+              - generic "Copy path to clipboard":
+                - button "Copy path to clipboard"
+              - 'button "get /api/Employees/{id}" [ref=e113]':
+                - img [ref=e114]
+            - generic [ref=e118] [cursor=pointer]:
+              - button "GET /api/Employees/average-salary" [ref=e119]:
+                - generic [ref=e120]: GET
+                - generic [ref=e124]:
+                  - text: /api
+                  - text: /Employees
+                  - text: /average-salary
+              - generic "Copy path to clipboard":
+                - button "Copy path to clipboard"
+              - button "get /api/Employees/average-salary" [ref=e125]:
+                - img [ref=e126]
+        - generic [ref=e130]:
+          - heading "Schemas" [level=4] [ref=e131] [cursor=pointer]:
+            - button "Schemas" [expanded] [ref=e132]:
+              - generic [ref=e133]: Schemas
+              - img [ref=e134]
+          - button "Employee" [ref=e139] [cursor=pointer]:
+            - strong [ref=e142]: Employee
