@@ -13,6 +13,10 @@ namespace EmployeeManagement.Core.Interfaces
 
         Employee? GetEmployeeById(int id);
 
+        bool UpdateEmployee(int id, Employee employee);
+
+        bool DeleteEmployee(int id);
+
         double CalculateAverageSalary();
 
         List<Employee> FilterBySalary(double salary);

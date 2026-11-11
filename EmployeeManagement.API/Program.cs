@@ -1,3 +1,4 @@
+using EmployeeManagement.API.Middlewares;
 using EmployeeManagement.Core.Interfaces;
 using EmployeeManagement.Core.Services;
 
@@ -26,6 +27,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.MapControllers();
 

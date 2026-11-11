@@ -1,5 +1,6 @@
 using EmployeeManagement.Core.Interfaces;
 using EmployeeManagement.Core.Models;
+using EmployeeManagement.Domain.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.API.Controllers;
@@ -15,8 +16,15 @@ public class EmployeesController : ControllerBase
         _service = service;
     }
     [HttpPost]
-    public IActionResult AddEmployee(Employee employee)
+    public IActionResult AddEmployee(EmployeeCreateDto dto)
     {
+        var employee = new Employee
+        {
+            Name = dto.Name,
+            Age = dto.Age,
+            Salary = dto.Salary,
+            DepartmentId = dto.DepartmentId
+        };
         _service.AddEmployee(employee);
 
         return Ok("Employee added successfully");
@@ -25,7 +33,14 @@ public class EmployeesController : ControllerBase
     [HttpGet]
     public IActionResult GetAllEmployees()
     {
-        return Ok(_service.GetAllEmployees());
+        var employees = _service.GetAllEmployees();
+        var result = employees.Select(e => new EmployeeResponseDto
+        {
+            Name = e.Name,
+            Age = e.Age,
+            Salary = e.Salary,
+        }).ToList();
+        return Ok(result);
     }
 
     [HttpGet("{id}")]
@@ -37,6 +52,28 @@ public class EmployeesController : ControllerBase
             return NotFound("Employee not found");
 
         return Ok(employee);
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult UpdateEmployee(int id, Employee employee)
+    {
+        var result = _service.UpdateEmployee(id, employee);
+
+        if (!result)
+            return NotFound("Employee not found");
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteEmployee(int id)
+    {
+        var result = _service.DeleteEmployee(id);
+
+        if (!result)
+            return NotFound("Employee not found");
+
+        return NoContent();
     }
 
     [HttpGet("average-salary")]
