@@ -9,8 +9,6 @@ namespace EmployeeManagement.Core.Interfaces
     {
         void AddEmployee(Employee employee);
 
-        List<Employee> GetAllEmployees();
-
         Employee? GetEmployeeById(int id);
 
         bool UpdateEmployee(int id, Employee employee);
@@ -34,5 +32,6 @@ namespace EmployeeManagement.Core.Interfaces
         double GetTotalSalary();
 
         List<Employee> SearchByName(string name);
+        IEnumerable<object> GetAllEmployees();
     }
 }
